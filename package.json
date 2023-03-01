@@ -19,6 +19,8 @@
   "homepage": "https://github.com/s1905/Solana-Subscription#readme",
   "dependencies": {
     "@solana/web3.js": "^1.73.3",
+    "bip39": "^3.1.0",
+    "bs58": "^5.0.0",
     "ts-node": "^10.9.1"
   }
 }
