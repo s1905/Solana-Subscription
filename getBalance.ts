@@ -24,10 +24,16 @@ const getSol = async () => {
     console.log(`txhash: ${txhash}`);
 }
 
-const getBalance = async () => {
+const getBalanceSOL = async () => {
     let balance = await connection.getBalance(sender);
     console.log(`${balance / LAMPORTS_PER_SOL} SOL`);
 }
 
-getBalance()
+const getBalanceUSDC = async () => {
+    const ACCOUNT_TO_WATCH = new PublicKey('A7WBCkvxYP1zHrFH9vnRGbZ6M93G4Myo8VidTyzpkmx2');
+    const USDC_Balance = await connection.getTokenAccountBalance(ACCOUNT_TO_WATCH);
+    console.log(USDC_Balance.value.uiAmount);
+}
+
+getBalanceUSDC()
 //connection.requestAirdrop(senderKeypair, LAMPORTS_PER_SOL);
